@@ -13,6 +13,35 @@ function getTodoListFromLocalStorage() {
 }
 
 let todoList = getTodoListFromLocalStorage();
+todoList = [
+  {
+    text: "Learn HTML",
+    uniqueNo: 1
+  },
+  {
+    text: "Learn CSS",
+    uniqueNo: 2
+  },
+  {
+    text: "Learn JavaScript",
+    uniqueNo: 3
+  }
+];
+
+let todosCount = todoList.length;
+
+function onTodoStatusChange(checkboxId, labelId) {
+  let checkboxElement = document.getElementById(checkboxId);
+  let labelElement = document.getElementById(labelId);
+
+  labelElement.classList.toggle('checked');
+}
+
+function onDeleteTodo(todoId) {
+  let todoElement = document.getElementById(todoId);
+
+  todoItemsContainer.removeChild(todoElement);
+}
 let todosCount = todoList.length;
 
 saveTodoButton.onclick = function () {
